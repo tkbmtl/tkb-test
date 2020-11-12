@@ -135,6 +135,17 @@
       <div class="product-single__meta">
 
         <h1 class="product-single__title">{{ product.title }}</h1>
+
+        {%- comment -%}Show SKU {%- endcomment -%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+		    <p>{{ current_variant.sku }}</p>
+
+        {%- comment -%}Show Vendor {%- endcomment -%}
+		    <p>{{ product.vendor }}</p>
+
+        {%- comment -%} Check to see if Canadian {%- endcomment -%}
+        {% include 'made-assembled-in-canada' %}
+
         <script>window.performance.mark('debut:product:title_visible');</script>
 
           <div class="product__price">
@@ -270,6 +281,13 @@
         <div class="product-single__description rte">
           {{ product.description }}
         </div>
+
+        {%- comment -%} check for technologies in products {%- endcomment -%}
+        {% include 'product-technologies' %}
+
+        {%- comment -%} check for certifications in products {%- endcomment -%}
+        {% include 'product-certifications' %}
+
 
         {% if section.settings.show_share_buttons %}
           {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_media %}

@@ -1,0 +1,8 @@
+<div class="product-cnd">
+    {% assign attribute_keyword = 'Canada' %}
+    {% for tag in product.tags %}
+    {% if tag contains attribute_keyword %}
+        {{tag }}
+    {% endif %}
+    {% endfor %}
+</div>

@@ -1,0 +1,8 @@
+<div class="product-tech">
+    {% assign attribute_keyword = 'Tech:' %}
+    {% for tag in product.tags %}
+    {% if tag contains attribute_keyword %}
+        {{ tag }}
+    {% endif %}
+    {% endfor %}
+</div>

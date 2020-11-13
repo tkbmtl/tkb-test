@@ -9149,4 +9149,11 @@ hr {
     margin-bottom: 0;
 }
 
-/*CUSTOM*/
+/*CUSTOM*******************************/
+
+.announcement-bar__message {
+    padding: 5px 22px;
+    font-size: calc(((12) / (var(--font-size-base))) * 1em);
+    font-weight: 900;
+    text-transform: uppercase;
+}

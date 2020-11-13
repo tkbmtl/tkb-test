@@ -9151,9 +9151,38 @@ hr {
 
 /*CUSTOM*******************************/
 
+/* Top Message */
+
 .announcement-bar__message {
     padding: 5px 22px;
     font-size: calc(((12) / (var(--font-size-base))) * 1em);
     font-weight: 900;
+    text-transform: uppercase;
+}
+
+/* Main Menu */
+
+#SiteNav {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.site-nav--has-dropdown .site-nav__label {
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.site-nav__label {
+    border-bottom: none;
+}
+
+/* Hero front page */
+.hero__btn {
+    background-color: #b30d28;
+    font-size: 28px;
+    padding: 7px 30px;
+}
+
+.hero .mega-title {
     text-transform: uppercase;
 }

@@ -9151,6 +9151,14 @@ hr {
 
 /*CUSTOM*******************************/
 
+/* FONT */
+h1,
+h2,
+h3,
+h4 {
+    text-transform: uppercase !important;
+}
+
 /* Top Message */
 
 .announcement-bar__message {
@@ -9163,13 +9171,13 @@ hr {
 /* Main Menu */
 
 #SiteNav {
-    font-weight: bold;
+    font-weight: 900;
     text-transform: uppercase;
 }
 
 .site-nav--has-dropdown .site-nav__label {
-    text-transform: uppercase;
-    font-weight: bolder;
+    text-transform: uppercase; 
+    font-weight: 900;
 }
 
 .site-nav__label {
@@ -9178,9 +9186,13 @@ hr {
 
 /* Hero front page */
 .hero__btn {
-    background-color: #b30d28;
+    background-color: #c8102e;
     font-size: 28px;
     padding: 7px 30px;
+}
+
+a.hero__btn:hover {
+    background-color: #b30d28 !important;
 }
 
 .hero .mega-title {

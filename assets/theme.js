@@ -732,23 +732,14 @@ slate.Variants = (function() {
     _getVariantFromOptions: function() {
       var selectedValues = this._getCurrentOptions();
 
-      console.log('Selected Values');
-      console.log(selectedValues);
-
       var variants = this.product.variants;
 
-      console.log('All products variants');
-      console.log(variants);
 
       var found = variants.find(function(variant) {
         return selectedValues.every(function(values) {
           return variant[values.index] === values.value;
         });
       });
-
-      console.log('This seems to match');
-      console.log(found);
-
       return found;
     },
 
@@ -757,7 +748,7 @@ slate.Variants = (function() {
      */
     _onSelectChange: function() {
       var variant = this._getVariantFromOptions();
-      console.log('imput change');
+  
       this.container.dispatchEvent(
         new CustomEvent('variantChange', {
           detail: {
@@ -8308,6 +8299,7 @@ theme.Product = (function() {
           console.log(error);
         });
     },
+    
 
     _handleButtonLoadingState: function(isLoading) {
       if (isLoading) {

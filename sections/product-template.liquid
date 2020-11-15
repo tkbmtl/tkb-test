@@ -178,7 +178,7 @@
                     {%- comment -%} Check if its the color{%- endcomment -%}
                     {% if option.name == "Color" %}
 
-                      <label>{{option.name}} : {{value}}</label>
+                      <label>{{option.name}} : <span id="selected-color">Aloo</span></label>
                       {% assign index = forloop.index %}
                 
                       {%- comment -%}Loop throught the color {%- endcomment -%}
@@ -191,6 +191,31 @@
                           </label>
                         {% endfor %}
                       </div>
+
+                      <script>
+                        // First load for color label
+                        var radios = document.getElementsByName('color');
+                        for (var i = 0, length = radios.length; i < length; i++) {
+                          if (radios[i].checked) {
+                            // do whatever you want with the checked radio
+                            var span = document.getElementById("selected-color");
+                            span.textContent = radios[i].value;
+                            // only one radio can be logically checked, don't check the rest
+                            break;
+                          }
+                        }
+                        // On change for color label
+                        let contact = document.querySelectorAll('input[name="color"]');
+                        if( contact ){
+                          for( let i = 0; i < contact.length; i++ ){
+                            contact[i].addEventListener("change", function(){
+                              let item = this.value; // this == the clicked radio, which launched the function
+                              var span = document.getElementById("selected-color");
+                              span.textContent = item;
+                            });
+                          }
+                        }
+                      </script>
 
 
                     {% else %}

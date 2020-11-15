@@ -174,17 +174,38 @@
               <div class="product-form__controls-group">
                 {% for option in product.options_with_values %}
                   <div class="selector-wrapper js product-form__item">
-                    <label for="SingleOptionSelector-{{ forloop.index0 }}">
-                      {{ option.name }}
-                    </label>
-                    <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input"
-                      id="SingleOptionSelector-{{ forloop.index0 }}"
-                      data-index="option{{ forloop.index }}"
-                    >
+
+
+                    {%- comment -%} Check if its the color{%- endcomment -%}
+                    {% if option.name == "Color" %}
+
+                      <label>{{option.name}}</label>
+
+                      {% assign index = forloop.index %}
+
                       {% for value in option.values %}
-                        <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+                        <img src="{{value}}" alt="">
+                        <input class="single-option-selector-{{ section.id }}" type="radio" id="color-{{forloop.index}}" name="color" value="{{ value | escape }}" data-index="option{{index}}" {% if option.selected_value == value %} checked {% endif %}>
+                        <label for="color-{{forloop.index}}">{{value}}</label>
                       {% endfor %}
-                    </select>
+                    {% else %}
+
+                      {%- comment -%} Defaut Options Selector{%- endcomment -%}
+                      <label for="SingleOptionSelector-{{ forloop.index0 }}">
+                        {{ option.name }}
+                      </label>
+                      <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input"
+                        id="SingleOptionSelector-{{ forloop.index0 }}"
+                        data-index="option{{ forloop.index }}"
+                      >
+                        {% for value in option.values %}
+                          <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+                        {% endfor %}
+                      </select>
+                      {%- comment -%} End default Options Selector{%- endcomment -%}
+
+                    {% endif %}
+
                   </div>
                 {% endfor %}
               </div>

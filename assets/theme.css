@@ -9176,7 +9176,7 @@ h4 {
 }
 
 .site-nav--has-dropdown .site-nav__label {
-    text-transform: uppercase; 
+    text-transform: uppercase;
     font-weight: 900;
 }
 
@@ -9197,4 +9197,45 @@ a.hero__btn:hover {
 
 .hero .mega-title {
     text-transform: uppercase;
+}
+
+/* Color Swatches*/
+
+.color-swatches {
+    display: flex;
+    justify-content: left;
+}
+
+.color-swatches label {
+    margin-right: 5%;
+}
+
+.color-swatches input {
+    display: none;
+}
+
+.swatch {
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    padding: 5px;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1pt #bebebe;
+}
+
+.color-swatches input:checked + label {
+    border-radius: 50%;
+    box-shadow: 0 0 0 2pt #000;
+}
+
+.swatch-color-Wheat {
+    background-color: #e6ad67;
+}
+
+.swatch-color-Brown {
+    background-color: #735241;
+}
+
+.swatch-color-Black {
+    background-color: #29282b;
 }

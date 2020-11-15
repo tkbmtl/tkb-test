@@ -175,19 +175,24 @@
                 {% for option in product.options_with_values %}
                   <div class="selector-wrapper js product-form__item">
 
-
                     {%- comment -%} Check if its the color{%- endcomment -%}
                     {% if option.name == "Color" %}
 
-                      <label>{{option.name}}</label>
-
+                      <label>{{option.name}} : {{value}}</label>
                       {% assign index = forloop.index %}
-
+                
+                      {%- comment -%}Loop throught the color {%- endcomment -%}
+                      <div class="color-swatches">
                       {% for value in option.values %}
-                        <img src="{{value}}" alt="">
-                        <input class="single-option-selector-{{ section.id }}" type="radio" id="color-{{forloop.index}}" name="color" value="{{ value | escape }}" data-index="option{{index}}" {% if option.selected_value == value %} checked {% endif %}>
-                        <label for="color-{{forloop.index}}">{{value}}</label>
-                      {% endfor %}
+                          {% assign color_name = value %}
+                          <input class="single-option-selector-{{ section.id }}" type="radio" id="color-{{forloop.index}}" name="color" value="{{ value | escape }}" data-index="option{{index}}" {% if option.selected_value == value %} checked {% endif %}>
+                          <label for="color-{{forloop.index}}">
+                            <div class="swatch swatch-color-{{ color_name | escape }}"></div>
+                          </label>
+                        {% endfor %}
+                      </div>
+
+
                     {% else %}
 
                       {%- comment -%} Defaut Options Selector{%- endcomment -%}

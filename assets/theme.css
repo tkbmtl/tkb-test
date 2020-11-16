@@ -9168,7 +9168,7 @@ h4 {
     text-transform: uppercase;
 }
 
-/* Main Menu */
+/**** Main Menu ************************/
 
 #SiteNav {
     font-weight: 900;
@@ -9199,10 +9199,13 @@ a.hero__btn:hover {
     text-transform: uppercase;
 }
 
+/**** PRODUCT PAGE *****************************************/
+
 /* Color Swatches*/
 
 .color-swatches {
     display: flex;
+    flex-wrap: wrap;
     justify-content: left;
 }
 
@@ -9238,4 +9241,53 @@ a.hero__btn:hover {
 
 .swatch-color-Black {
     background-color: #29282b;
+}
+
+.swatch-color-Sand {
+    background-color: #e1b288;
+}
+
+.padding-hr {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.product-form__controls-group {
+    display: block;
+}
+
+.product-form {
+    padding-top: 0.5rem;
+}
+
+/* Sizes */
+
+.size-boxes {
+    display: flex;
+    flex-wrap: wrap;
+}
+.size-boxes label {
+    margin: 1%;
+}
+
+.size-boxes input {
+    display: none;
+}
+
+.size-box {
+    height: 44px;
+    width: 44px;
+    padding: 5px;
+    border: 1px solid lightgrey;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-flex;
+    font-size: 14px;
+}
+
+.size-boxes input:checked + label {
+    background-color: black;
+    color: white;
 }

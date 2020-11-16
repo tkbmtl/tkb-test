@@ -134,105 +134,153 @@
     <div class="grid__item {{ product_description_width }}">
       <div class="product-single__meta">
 
-        <h1 class="product-single__title">{{ product.title }}</h1>
+        <div class="head-product-info-block padding-hr">
+      
+          {%- comment -%}Show Vendor {%- endcomment -%}
+          <h3>{{ product.vendor }}</h3>
+          {%- comment -%}Show SKU {%- endcomment -%}
+          {% assign current_variant = product.selected_or_first_available_variant %}
+          <h1 class="variant-sku">{{ current_variant.sku }}</h1>
+          <h2 class="product-single__title">{{ product.title }}</h2>
 
-        {%- comment -%}Show SKU {%- endcomment -%}
-        {% assign current_variant = product.selected_or_first_available_variant %}
-		    <p class="variant-sku">{{ current_variant.sku }}</p>
+          <script>window.performance.mark('debut:product:title_visible');</script>
 
-        {%- comment -%}Show Vendor {%- endcomment -%}
-		    <p>{{ product.vendor }}</p>
-
-        {%- comment -%} Check to see if Canadian {%- endcomment -%}
-        {% include 'made-assembled-in-canada' %}
-
-        <script>window.performance.mark('debut:product:title_visible');</script>
-
-          <div class="product__price">
-            {% include 'product-price', variant: current_variant, show_vendor: section.settings.show_vendor %}
-          </div>
-
-          {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
-            <div class="product__policies rte" data-product-policies>
-              {%- if shop.taxes_included -%}
-                {{ 'products.product.include_taxes' | t }}
-              {%- endif -%}
-              {%- if shop.shipping_policy.body != blank -%}
-                {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-              {%- endif -%}
+            <div class="product__price">
+              {% include 'product-price', variant: current_variant, show_vendor: section.settings.show_vendor %}
             </div>
-          {%- endif -%}
 
-          {% capture "form_classes" -%}
-            product-form product-form-{{ section.id }}
-            {%- if section.settings.enable_payment_button and product.has_only_default_variant %} product-form--payment-button-no-variants {%- endif -%}
-            {%- if current_variant.available == false %} product-form--variant-sold-out {%- endif -%}
-          {%- endcapture %}
+            {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+              <div class="product__policies rte" data-product-policies>
+                {%- if shop.taxes_included -%}
+                  {{ 'products.product.include_taxes' | t }}
+                {%- endif -%}
+                {%- if shop.shipping_policy.body != blank -%}
+                  {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+
+            {% capture "form_classes" -%}
+              product-form product-form-{{ section.id }}
+              {%- if section.settings.enable_payment_button and product.has_only_default_variant %} product-form--payment-button-no-variants {%- endif -%}
+              {%- if current_variant.available == false %} product-form--variant-sold-out {%- endif -%}
+            {%- endcapture %}
+
+        </div>
 
           {% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
             {% unless product.has_only_default_variant %}
               <div class="product-form__controls-group">
                 {% for option in product.options_with_values %}
                   <div class="selector-wrapper js product-form__item">
-
                     {%- comment -%} Check if its the color{%- endcomment -%}
+
                     {% if option.name == "Color" %}
 
-                      <label>{{option.name}} : <span id="selected-color">Aloo</span></label>
-                      {% assign index = forloop.index %}
-                
-                      {%- comment -%}Loop throught the color {%- endcomment -%}
-                      <div class="color-swatches">
-                      {% for value in option.values %}
-                          {% assign color_name = value %}
-                          <input class="single-option-selector-{{ section.id }}" type="radio" id="color-{{forloop.index}}" name="color" value="{{ value | escape }}" data-index="option{{index}}" {% if option.selected_value == value %} checked {% endif %}>
-                          <label for="color-{{forloop.index}}">
-                            <div class="swatch swatch-color-{{ color_name | escape }}"></div>
-                          </label>
-                        {% endfor %}
+                      <label>{{option.name}} - <span id="selected-color"></span></label>
+
+                      <div class="color-swatches padding-hr">
+                        {%- comment -%}Loop throught the color {%- endcomment -%}
+                        {% assign index = forloop.index %}
+                       
+                          {% for value in option.values %}
+                              {% assign color_name = value %}
+                              <input class="single-option-selector-{{ section.id }}" type="radio" id="color-{{forloop.index}}" name="color" value="{{ value | escape }}" data-index="option{{index}}" {% if option.selected_value == value %} checked {% endif %}>
+                              <label for="color-{{forloop.index}}">
+                                <div class="swatch swatch-color-{{ color_name | escape }}"></div>
+                              </label>
+                          {% endfor %}
+                        
+                        <script>
+                          // First load for color label
+                          var radios_color = document.getElementsByName('color');
+                          for (var i = 0, length = radios_color.length; i < length; i++) {
+                            if (radios_color[i].checked) {
+                              // do whatever you want with the checked radio
+                              var span = document.getElementById("selected-color");
+                              span.textContent = radios_color[i].value;
+                              // only one radio can be logically checked, don't check the rest
+                              break;
+                            }
+                          }
+                          // On change for color label
+                          let color = document.querySelectorAll('input[name="color"]');
+                          if( color ){
+                            for( let i = 0; i < color.length; i++ ){
+                              color[i].addEventListener("change", function(){
+                                let item = this.value; // this == the clicked radio, which launched the function
+                                var span = document.getElementById("selected-color");
+                                span.textContent = item;
+                              });
+                            }
+                          }
+                        </script>
+
                       </div>
 
-                      <script>
-                        // First load for color label
-                        var radios = document.getElementsByName('color');
-                        for (var i = 0, length = radios.length; i < length; i++) {
-                          if (radios[i].checked) {
-                            // do whatever you want with the checked radio
-                            var span = document.getElementById("selected-color");
-                            span.textContent = radios[i].value;
-                            // only one radio can be logically checked, don't check the rest
-                            break;
-                          }
-                        }
-                        // On change for color label
-                        let contact = document.querySelectorAll('input[name="color"]');
-                        if( contact ){
-                          for( let i = 0; i < contact.length; i++ ){
-                            contact[i].addEventListener("change", function(){
-                              let item = this.value; // this == the clicked radio, which launched the function
-                              var span = document.getElementById("selected-color");
-                              span.textContent = item;
-                            });
-                          }
-                        }
-                      </script>
+                    {% elsif option.name == "Size" %}
 
+                      <label>{{option.name}} - <span id="selected-size"></span></label>
+
+                      <div class="size-boxes padding-hr">
+
+                        {%- comment -%}Loop throught the sizes {%- endcomment -%}
+                        {% assign index = forloop.index %}
+                       
+                          {% for value in option.values %}
+                              {% assign size_name = value %}
+                              <input class="single-option-selector-{{ section.id }}" type="radio" id="size-{{forloop.index}}" name="size" value="{{ value | escape }}" data-index="option{{index}}" {% if option.selected_value == value %} checked {% endif %}>
+                              <label for="size-{{forloop.index}}">
+                                <div class="size-box">{{size_name}}</div>
+                              </label>
+                          {% endfor %}
+
+                        <script>
+                          // First load for size
+                          // CHECK SI Y A UNE VARIANTE DANS LE URL S'IL Y EN A PAS METTRE TOUT A UNCHECKED
+                          var radios = document.getElementsByName('size');
+                          for (var i = 0, length = radios.length; i < length; i++) {
+                            if (radios[i].checked) {
+                              console.log("in")
+                              radios[i].checked = false
+                              break;
+                            }
+                          }
+                          // On change for color label
+                          let contact = document.querySelectorAll('input[name="size"]');
+                          if( contact ){
+                            for( let i = 0; i < contact.length; i++ ){
+                              contact[i].addEventListener("change", function(){
+                                let item = this.value; // this == the clicked radio, which launched the function
+                                var span = document.getElementById("selected-size");
+                                span.textContent = item;
+                              });
+                            }
+                          }
+                        </script>
+
+                        
+                      </div>
 
                     {% else %}
 
-                      {%- comment -%} Defaut Options Selector{%- endcomment -%}
-                      <label for="SingleOptionSelector-{{ forloop.index0 }}">
-                        {{ option.name }}
-                      </label>
-                      <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input"
-                        id="SingleOptionSelector-{{ forloop.index0 }}"
-                        data-index="option{{ forloop.index }}"
-                      >
-                        {% for value in option.values %}
-                          <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
-                        {% endfor %}
-                      </select>
-                      {%- comment -%} End default Options Selector{%- endcomment -%}
+                      <div class="padding-hr ">
+
+                         {%- comment -%} Defaut Options Selector{%- endcomment -%}
+                        <label for="SingleOptionSelector-{{ forloop.index0 }}">
+                          {{ option.name }} - <span id="selected-size"></span>
+                        </label>
+                        <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input"
+                          id="SingleOptionSelector-{{ forloop.index0 }}"
+                          data-index="option{{ forloop.index }}"
+                        >
+                          {% for value in option.values %}
+                            <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+                          {% endfor %}
+                        </select>
+                        {%- comment -%} End default Options Selector{%- endcomment -%}
+
+                      </div>
 
                     {% endif %}
 
@@ -332,6 +380,9 @@
         <div class="product-single__description rte">
           {{ product.description }}
         </div>
+
+        {%- comment -%} Check to see if Canadian {%- endcomment -%}
+        {% include 'made-assembled-in-canada' %}
 
         {%- comment -%} check for technologies in products {%- endcomment -%}
         {% include 'product-technologies' %}

@@ -9291,3 +9291,9 @@ a.hero__btn:hover {
     background-color: black;
     color: white;
 }
+/*
+.size-boxes input:hover + label {
+    background-color: lightgray;
+    opacity: 0.8;
+}
+*/

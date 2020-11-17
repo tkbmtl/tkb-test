@@ -237,16 +237,20 @@
 
                         <script>
                           // First load for size
-                          // CHECK SI Y A UNE VARIANTE DANS LE URL S'IL Y EN A PAS METTRE TOUT A UNCHECKED
-                          var radios = document.getElementsByName('size');
-                          for (var i = 0, length = radios.length; i < length; i++) {
-                            if (radios[i].checked) {
-                              console.log("in")
-                              radios[i].checked = false
-                              break;
+                          // Check to see if first call or deeplinked and remove first selected variant per default
+                          const queryString = window.location.search;
+                          const urlParams = new URLSearchParams(queryString);
+                          if (!urlParams.has('variant')) {
+                            // Remove the checked size for first call on the page
+                            var radios = document.getElementsByName('size');
+                            for (var i = 0, length = radios.length; i < length; i++) {
+                              if (radios[i].checked) {
+                                radios[i].checked = false
+                                break;
+                              }
                             }
                           }
-                          // On change for color label
+                          // On change for size label
                           let contact = document.querySelectorAll('input[name="size"]');
                           if( contact ){
                             for( let i = 0; i < contact.length; i++ ){

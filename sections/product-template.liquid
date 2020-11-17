@@ -236,8 +236,17 @@
                           {% endfor %}
 
                         <script>
+
+                          window.addEventListener("DOMContentLoaded", disabledAddButton, false);
+                          
+                          function disabledAddButton(e) {
+                            document.getElementsByName("add")[0].disabled = true;
+                          }
+
                           // First load for size
                           // Check to see if first call or deeplinked and remove first selected variant per default
+                      
+
                           const queryString = window.location.search;
                           const urlParams = new URLSearchParams(queryString);
                           if (!urlParams.has('variant')) {
@@ -250,6 +259,7 @@
                               }
                             }
                           }
+                          
                           // On change for size label
                           let contact = document.querySelectorAll('input[name="size"]');
                           if( contact ){
@@ -346,6 +356,9 @@
                     {% include 'icon-spinner' %}
                   </span>
                 </button>
+
+
+
                 {% if section.settings.enable_payment_button %}
                   {{ form | payment_button }}
                 {% endif %}

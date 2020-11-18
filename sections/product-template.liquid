@@ -237,37 +237,48 @@
 
                         <script>
 
-                          window.addEventListener("DOMContentLoaded", disabledAddButton, false);
+                          window.addEventListener("DOMContentLoaded", firstloadSize, false);
                           
-                          function disabledAddButton(e) {
+                          function firstloadSize(e) {
+                            //disable the button
                             document.getElementsByName("add")[0].disabled = true;
-                          }
 
-                          // First load for size
-                          // Check to see if first call or deeplinked and remove first selected variant per default
-                      
-
-                          const queryString = window.location.search;
-                          const urlParams = new URLSearchParams(queryString);
-                          if (!urlParams.has('variant')) {
-                            // Remove the checked size for first call on the page
-                            var radios = document.getElementsByName('size');
-                            for (var i = 0, length = radios.length; i < length; i++) {
-                              if (radios[i].checked) {
-                                radios[i].checked = false
-                                break;
+                            // First load for size
+                            // Check to see if first call or deeplinked and remove 
+                            // first selected variant per default
+                        
+                            const queryString = window.location.search;
+                            const urlParams = new URLSearchParams(queryString);
+                            if (!urlParams.has('variant')) {
+                              
+                              // Remove the checked size for first call on the page
+                              var radios = document.getElementsByName('size');
+                              for (var i = 0, length = radios.length; i < length; i++) {
+                                if (radios[i].checked) {
+                                  radios[i].checked = false
+                                  break;
+                                }
                               }
+                              //it is the firstcall so disable button
+                              document.getElementsByName("add")[0].disabled = true;
+                              
+                            } else {
+                              //its a deep linked variant enable the buttons
+                              document.getElementsByName("add")[0].disabled = false;
                             }
+
                           }
-                          
+
                           // On change for size label
-                          let contact = document.querySelectorAll('input[name="size"]');
-                          if( contact ){
-                            for( let i = 0; i < contact.length; i++ ){
-                              contact[i].addEventListener("change", function(){
+                          let sizes = document.querySelectorAll('input[name="size"]');
+                          if( sizes ){
+                            for( let i = 0; i < sizes.length; i++ ){
+                              sizes[i].addEventListener("change", function(){
+                                document.getElementsByName("add")[0].disabled = false;
                                 let item = this.value; // this == the clicked radio, which launched the function
                                 var span = document.getElementById("selected-size");
                                 span.textContent = item;
+
                               });
                             }
                           }

@@ -137,7 +137,7 @@
         <div class="head-product-info-block padding-hr">
       
           {%- comment -%}Show Vendor {%- endcomment -%}
-          <h3>{{ product.vendor }}</h3>
+          <h3 class="p-head-h3">{{ product.vendor }}</h3>
           {%- comment -%}Show SKU {%- endcomment -%}
           {% assign current_variant = product.selected_or_first_available_variant %}
           <h1 class="variant-sku">{{ current_variant.sku }}</h1>
@@ -177,7 +177,7 @@
 
                     {% if option.name == "Color" %}
 
-                      <label>{{option.name}} - <span id="selected-color"></span></label>
+                      <label class="h5">{{option.name}} - <span id="selected-color"></span></label>
 
                       <div class="color-swatches padding-hr">
                         {%- comment -%}Loop throught the color {%- endcomment -%}
@@ -220,7 +220,7 @@
 
                     {% elsif option.name == "Size" %}
 
-                      <label>{{option.name}} - <span id="selected-size"></span></label>
+                      <label class="h5">{{option.name}} - <span id="selected-size"></span></label>
 
                       <div class="size-boxes padding-hr">
 
@@ -264,21 +264,31 @@
                               
                             } else {
                               //its a deep linked variant enable the buttons
-                              document.getElementsByName("add")[0].disabled = false;
+                              // On change for size label
+                              let sizes = document.querySelectorAll('input[name="size"]');
+                              if( sizes ){
+                                // On cherche le size selectionné
+                                for( let i = 0; i < sizes.length; i++ ){
+                                  document.getElementsByName("add")[0].disabled = false;
+                                  if(sizes[i].checked) {
+                                    var span = document.getElementById("selected-size");
+                                    span.textContent = sizes[i].value;
+                                  }
+                                }
+                              }
                             }
-
                           }
 
                           // On change for size label
                           let sizes = document.querySelectorAll('input[name="size"]');
                           if( sizes ){
+                            // On cherche le size selectionné
                             for( let i = 0; i < sizes.length; i++ ){
                               sizes[i].addEventListener("change", function(){
-                                document.getElementsByName("add")[0].disabled = false;
-                                let item = this.value; // this == the clicked radio, which launched the function
-                                var span = document.getElementById("selected-size");
-                                span.textContent = item;
-
+                              document.getElementsByName("add")[0].disabled = false;
+                              let item = this.value; // this == the clicked radio, which launched the function
+                              var span = document.getElementById("selected-size");
+                              span.textContent = item;
                               });
                             }
                           }

@@ -1,8 +1,8 @@
 {
   "current": {
-    "type_header_font": "roboto_condensed_n7",
-    "type_header_base_size": 28,
-    "type_base_font": "lato_n4",
+    "type_header_font": "prompt_n8",
+    "type_header_base_size": 30,
+    "type_base_font": "lato_n5",
     "type_base_size": 16,
     "favicon": "shopify:\/\/shop_images\/fav.png",
     "sections": {

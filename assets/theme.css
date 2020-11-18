@@ -9171,13 +9171,13 @@ h4 {
 /**** Main Menu ************************/
 
 #SiteNav {
-    font-weight: 900;
+    font-family: prompt;
+    font-size: 16px;
     text-transform: uppercase;
 }
 
 .site-nav--has-dropdown .site-nav__label {
     text-transform: uppercase;
-    font-weight: 900;
 }
 
 .site-nav__label {
@@ -9200,6 +9200,13 @@ a.hero__btn:hover {
 }
 
 /**** PRODUCT PAGE *****************************************/
+
+/* Head */
+
+.head-product-info-block h3,
+h1 {
+    margin-bottom: 0;
+}
 
 /* Color Swatches*/
 

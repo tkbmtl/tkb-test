@@ -190,16 +190,24 @@
             "settings": {
               "title": "Newsletter"
             }
+          },
+          "b23d9f2b-fb1a-435e-a67f-7cdb384184bb": {
+            "type": "link_list",
+            "settings": {
+              "title": "Quick links",
+              "menu": "footer"
+            }
           }
         },
         "block_order": [
           "footer-0",
-          "footer-1"
+          "footer-1",
+          "b23d9f2b-fb1a-435e-a67f-7cdb384184bb"
         ],
         "settings": {
           "show_payment_icons": true,
-          "color_footer_bg": "#f6f6f6",
-          "color_footer_text": "#333232",
+          "color_footer_bg": "#333333",
+          "color_footer_text": "#ffffff",
           "show_locale_selector": true,
           "show_currency_selector": true
         }

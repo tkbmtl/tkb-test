@@ -415,26 +415,36 @@
         >
         </div>
 
-        <div class="product-single__description rte">
-          {{ product.description }}
-        </div>
-
-        {%- comment -%} Check to see if Canadian {%- endcomment -%}
-        {% include 'made-assembled-in-canada' %}
-
-        {%- comment -%} check for technologies in products {%- endcomment -%}
-        {% include 'product-technologies' %}
-
-        {%- comment -%} check for certifications in products {%- endcomment -%}
-        {% include 'product-certifications' %}
-
-
-        {% if section.settings.show_share_buttons %}
-          {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_media %}
-        {% endif %}
     </div>
   </div>
 </div>
+
+<div class="shopify-section p-description-main">
+  <div class="product-template__container page-width p-description">
+
+          <div class="page-width">
+              piipippiipip
+              <div class="product-single__description rte">
+                {{ product.description }}
+              </div>
+
+              {%- comment -%} Check to see if Canadian {%- endcomment -%}
+              {% include 'made-assembled-in-canada' %}
+
+              {%- comment -%} check for technologies in products {%- endcomment -%}
+              {% include 'product-technologies' %}
+
+              {%- comment -%} check for certifications in products {%- endcomment -%}
+              {% include 'product-certifications' %}
+
+
+              {% if section.settings.show_share_buttons %}
+                {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_media %}
+              {% endif %}
+          </div>
+  </div>
+</div>
+
 
 {% unless product == empty %}
   <script type="application/json" id="ProductJson-{{ section.id }}">

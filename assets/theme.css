@@ -9303,3 +9303,19 @@ h1 {
     background-color: lightgray;
     opacity: 0.8;
 }
+
+/*
+/admin/themes/115462471874?key=assets%2FGroup-106.svg
+*/
+.p-description-main {
+    background-image: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.65)
+        ),
+        url(https://cdn.shopify.com/s/files/1/0510/5627/9746/t/2/assets/Group-106.svg);
+    background-position: 0 0, 0 0;
+    background-size: auto, cover;
+}
+.p-description {
+}

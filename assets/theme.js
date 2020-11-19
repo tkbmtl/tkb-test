@@ -691,6 +691,10 @@ slate.Variants = (function() {
     );
     this.currentVariant = this._getVariantFromOptions();
 
+    /* Custom ******************************/
+    this._filterThumbnails(this.currentVariant);
+    /* end custom */
+
     this.singleOptions.forEach(
       function(option) {
         option.addEventListener('change', this._onSelectChange.bind(this));
@@ -765,6 +769,11 @@ slate.Variants = (function() {
 
       this._updateMasterSelect(variant);
       this._updateImages(variant);
+
+      /* Custom ******************************/
+      this._filterThumbnails(variant);
+      /* end custom */
+
       this._updatePrice(variant);
       this._updateSKU(variant);
       this.currentVariant = variant;
@@ -780,6 +789,33 @@ slate.Variants = (function() {
      * @param  {object} variant - Currently selected variant
      * @return {event}  variantImageChange
      */
+
+    /* Custom *************************/
+    _filterThumbnails: function(variant) {
+      if(variant.featured_media != null && variant.featured_media.alt != null ) {
+        //hide everything first
+        var all_data_thumbnail_color = document.querySelectorAll('[data-thumbnail-color]');
+        for (var i = 0; i < all_data_thumbnail_color.length; i ++) {
+          all_data_thumbnail_color[i].style.display = 'none';
+        }
+        //show thumbnail for selected color
+        var selected_alt_color = variant.featured_media.alt
+        var thumbnail_selector = '[data-thumbnail-color="' + selected_alt_color + '"]';
+        var all_data_thumbnail_color = document.querySelectorAll(thumbnail_selector);
+        for (var i = 0; i < all_data_thumbnail_color.length; i ++) {
+          all_data_thumbnail_color[i].style.display = '';
+        }
+
+      } else {
+        //show all
+        var all_data_thumbnail_color = document.querySelectorAll('[data-thumbnail-color]');
+        for (var i = 0; i < all_data_thumbnail_color.length; i ++) {
+          all_data_thumbnail_color[i].style.display = '';
+        }
+      }
+    },
+
+
     _updateImages: function(variant) {
       var variantImage = variant.featured_image || {};
       var currentVariantImage = this.currentVariant.featured_image || {};

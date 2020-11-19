@@ -9149,7 +9149,9 @@ hr {
     margin-bottom: 0;
 }
 
-/*CUSTOM*******************************/
+/*****************************************************************/
+/* CUSTOM */
+/*****************************************************************/
 
 /* FONT */
 h1,
@@ -9304,9 +9306,10 @@ h1 {
     opacity: 0.8;
 }
 
-/*
-/admin/themes/115462471874?key=assets%2FGroup-106.svg
-*/
+.product-form__controls-group {
+    margin-top: 30px !important;
+}
+
 .p-description-main {
     background-image: linear-gradient(
             180deg,

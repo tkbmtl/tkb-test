@@ -378,8 +378,6 @@
                   </span>
                 </button>
 
-
-
                 {% if section.settings.enable_payment_button %}
                   {{ form | payment_button }}
                 {% endif %}
@@ -420,12 +418,16 @@
 </div>
 
 <div class="shopify-section p-description-main">
-  <div class="product-template__container page-width p-description">
+  <div class="product-template__container page-width">
 
           <div class="page-width">
-              piipippiipip
+              
               <div class="product-single__description rte">
-                {{ product.description }}
+              <h1>Characteristics</h1>
+                <div class="p-description">
+                  {{ product.description }}
+                </div>
+                
               </div>
 
               {%- comment -%} Check to see if Canadian {%- endcomment -%}

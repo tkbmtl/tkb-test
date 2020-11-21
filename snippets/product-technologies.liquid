@@ -1,8 +1,23 @@
 <div class="product-tech">
+
+
+
     {% assign attribute_keyword = 'Tech:' %}
+
     {% for tag in product.tags %}
-    {% if tag contains attribute_keyword %}
-        {{ tag }}
-    {% endif %}
+        {% if tag contains attribute_keyword %}
+        {%- comment -%}Loop techs tags{%- endcomment -%}
+            {% if tag == "Tech: XPAN" %}
+                <p>XPAN</p>
+                <p>XPAN SOLE</p>
+                <p>Exclusive to ROYER in North America, XPAN is a dual-density rubber vulcanization technology. XPAN combines the durability of dense rubber with the comfort and shock absorption of expanded rubber. The result is a high-performance, durable sole that is also flexible and comfortable.</p>
+            {% endif %}
+            {% if tag == "Tech: Pareshok" %}
+                <p>Parashok</p>
+                <p>PARESHOK BUMPER TOE</p>
+                <p>Protective TPU or rubber toecap positioned on the front of the boot (over the leather and toecap) to increase the vamp’s resistance to wear.</p>
+            {% endif %}
+
+        {% endif %}
     {% endfor %}
 </div>

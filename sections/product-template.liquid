@@ -418,20 +418,22 @@
 </div>
 
 <div class="shopify-section p-description-main">
-  <div class="product-template__container page-width rte">
+  <div class="product-template__container">
     <div class="page-width">
 
-      <div class="product-single__description">
+      <div class="product-single__description rte">
         <h1 class="p-description-h1">Characteristics</h1>
         <div class="p-description">
           {{ product.description }}
         </div>
       </div>
         
-      <div class="product-single__description">
-        <h1 class="p-description-h1">Characteristics</h1>
-          <div class="p-description">
-            {{ product.description }}
+      <div class="product-single__description rte">
+        <h1 class="p-description-h1">Technologies</h1>
+          <div class="p-technologies">
+            {%- comment -%} check for technologies in products {%- endcomment -%}
+            {% include 'product-technologies' %}
+
           </div>
       </div>
 
@@ -439,8 +441,7 @@
               {%- comment -%} Check to see if Canadian {%- endcomment -%}
               {% include 'made-assembled-in-canada' %}
 
-              {%- comment -%} check for technologies in products {%- endcomment -%}
-              {% include 'product-technologies' %}
+              
 
               {%- comment -%} check for certifications in products {%- endcomment -%}
               {% include 'product-certifications' %}

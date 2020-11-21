@@ -8,6 +8,9 @@
         {% if tag contains attribute_keyword %}
         {%- comment -%}Loop techs tags{%- endcomment -%}
             {% if tag == "Tech: XPAN" %}
+
+                {{ 'tech_xpan.png' | asset_img_url: '190x' | img_tag: "XPAN" }}
+    
                 <p>XPAN</p>
                 <p>XPAN SOLE</p>
                 <p>Exclusive to ROYER in North America, XPAN is a dual-density rubber vulcanization technology. XPAN combines the durability of dense rubber with the comfort and shock absorption of expanded rubber. The result is a high-performance, durable sole that is also flexible and comfortable.</p>

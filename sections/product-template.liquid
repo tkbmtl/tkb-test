@@ -422,20 +422,13 @@
     <div class="page-width">
 
       <div class="product-single__description rte">
-        <h1 class="p-description-h1">Characteristics</h1>
+        <h1 class="p-description-h1">{{ 'products.product.characteristics' | t }}</h1>
         <div class="p-description">
           {{ product.description }}
         </div>
       </div>
-        
-      <div class="product-single__description rte">
-        <h1 class="p-description-h1">Technologies</h1>
-          <div class="p-technologies">
-            {%- comment -%} check for technologies in products {%- endcomment -%}
-            {% include 'product-technologies' %}
 
-          </div>
-      </div>
+      {% include 'product-technologies' %}
 
       <div class="product-single__description rte">
         <h1 class="p-description-h1">Certifications</h1>

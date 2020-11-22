@@ -9334,6 +9334,9 @@ h1 {
     .p-description-h1 {
         font-size: 30px;
     }
+    .p-description-main {
+        margin-top: 0px;
+    }
 }
 
 .p-description ul li::before {
@@ -9360,4 +9363,40 @@ h1 {
     padding-bottom: 23px;
     border-bottom: 1px solid #c8102e;
     color: white;
+}
+.p-technologies ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+.p-technologies li {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+.p-technologies li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.p-technology-content {
+    padding: 0 20px 20px 20px;
+}
+
+.p-technology-content img {
+    padding: 10px;
+}
+
+.p-technology-content-head {
+    font-size: 20px;
+    color: gray;
+    line-height: 30px;
+    font-weight: bolder;
+}
+
+.p-technology-content-text {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 300;
+    padding: 10px 20px 0 20px;
 }

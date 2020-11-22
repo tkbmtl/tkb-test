@@ -372,7 +372,33 @@
     }
   },
   "products": {
+    "technology_xpan": {
+      "img": "tech_xpan.png",
+      "title": "XPAN SOLE",
+      "text": "Exclusive to ROYER in North America, XPAN is a dual-density rubber vulcanization technology. XPAN combines the durability of dense rubber with the comfort and shock absorption of expanded rubber. The result is a high-performance, durable sole that is also flexible and comfortable."
+    },
+    "technology_pareshok": {
+      "img": "tech_pareshok.png",
+      "title": "PARESHOK BUMPER TOE",
+      "text": "Protective TPU or rubber toecap positioned on the front of the boot (over the leather and toecap) to increase the vamp’s resistance to wear."
+    },
+    "technology_airflow": {
+      "img": "tech_airflow.png",
+      "title": "AIRFLOW MEMBRANE",
+      "text": "Boots made with AIRFLOW lining are waterproof. A microporous membrane laminated to the lining protects the inside of the boot from the infiltration of liquid while ensuring the elimination of sweat."
+    },
+    "technology_shieldtex": {
+      "img": "tech_shieldtex.png",
+      "title": "SHIELDTEX FABRIC",
+      "text": "ROYER introduced SHIELDTEX fabric in 2008 when it launched “the Mother of All Boots” collection. This high-performance fabric was originally developed for the car and motorcycle racing apparel industry. It provides high abrasion and wear resistance while optimizing flexibility and breathability. ROYER is a pioneer in terms of its use in work boots and shoes."
+    },
+    "technology_articgrip": {
+      "img": "tech_vibram_arctic_grip.png",
+      "title": "VIBRAM ARCTIC GRIP SOLE",
+      "text": "This new groundbreaking sole technology is specifically designed for wet ice. Discover a whole new world of grip and performance on slippery and wet ice. ARCTIC GRIP is the most advanced cold weather gripping system that VIBRAM has ever created."
+    },
     "product": {
+      "characteristics": "Characteristics",
       "regular_price": "Regular price",
       "sold_out": "Sold out",
       "unavailable": "Unavailable",

@@ -1,26 +1,88 @@
-<div class="product-tech">
 
+{% assign attribute_keyword = 'Tech:' %}
 
+{% for tag in product.tags %}
+    {% assign taglist = product.tags | join: ' ' %}
+{% endfor %}
 
-    {% assign attribute_keyword = 'Tech:' %}
+{% if taglist contains attribute_keyword %}
+    <div class="product-single__description rte">
+        <h1 class="p-description-h1">Technologies</h1>
+            <div class="p-technologies">
+                <ul>
+                {% for tag in product.tags %}
+                    {%- comment -%}Loop techs tags{%- endcomment -%}
+                    {% if tag contains attribute_keyword %}
+                        {% if tag == "Tech: XPAN" %}
+                            {% capture img %}{{ 'products.technology_xpan.img' | t }}{% endcapture %}
+                            {% capture img_tag %}{{ 'products.technology_xpan.img' | t }}{% endcapture %}
+                            <li>
+                                <div class="p-technology-content">
+                                    <div class="p-technology-content-img">
+                                        {{ img | asset_img_url: '210x' | img_tag: img_tag }}
+                                    </div>
+                                    <div class="p-technology-content-head">{{ 'products.technology_xpan.title' | t }}</div>
+                                    <div class="p-technology-content-text">{{ 'products.technology_xpan.text' | t }}</div>
+                                </div>
+                            </li>
+                        {% endif %}
+                        {% if tag == "Tech: Pareshok" %}
+                            {% capture img %}{{ 'products.technology_pareshok.img' | t }}{% endcapture %}
+                            {% capture img_tag %}{{ 'products.technology_pareshok.img' | t }}{% endcapture %}
+                            <li>
+                                <div class="p-technology-content">
+                                    <div class="p-technology-content-img">{{ img | asset_img_url: '210x' | img_tag: img_tag }}</div>
+                                    <div class="p-technology-content-head">{{ 'products.technology_pareshok.title' | t }}</div>
+                                    <div class="p-technology-content-text">{{ 'products.technology_pareshok.text' | t }}</div>
+                                </div>
+                            </li>
+                        {% endif %}
+                        {% if tag == "Tech: Airflow" %}
+                            {% capture img %}{{ 'products.technology_airflow.img' | t }}{% endcapture %}
+                            {% capture img_tag %}{{ 'products.technology_airflow.img' | t }}{% endcapture %}
+                            <li>
+                                <div class="p-technology-content">
+                                    <div class="p-technology-content-img">
+                                        {{ img | asset_img_url: '210x' | img_tag: img_tag }}
+                                    </div>
+                                    <div class="p-technology-content-head">{{ 'products.technology_airflow.title' | t }}</div>
+                                    <div class="p-technology-content-text">{{ 'products.technology_airflow.text' | t }}</div>
+                                </div>
+                            </li>
+                        {% endif %}
+                        {% if tag == "Tech: Shieldtex" %}
+                            {% capture img %}{{ 'products.technology_shieldtex.img' | t }}{% endcapture %}
+                            {% capture img_tag %}{{ 'products.technology_shieldtex.img' | t }}{% endcapture %}
+                            <li>
+                                <div class="p-technology-content">
+                                    <div class="p-technology-content-img">
+                                        {{ img | asset_img_url: '210x' | img_tag: img_tag }}
+                                    </div>
+                                    <div class="p-technology-content-head">{{ 'products.technology_shieldtex.title' | t }}</div>
+                                    <div class="p-technology-content-text">{{ 'products.technology_shieldtex.text' | t }}</div>
+                                </div>
+                            </li>
+                        {% endif %}
+                        {% if tag == "Tech: Artic Grip" %}
+                            {% capture img %}{{ 'products.technology_articgrip.img' | t }}{% endcapture %}
+                            {% capture img_tag %}{{ 'products.technology_articgrip.img' | t }}{% endcapture %}
+                            <li>
+                                <div class="p-technology-content">
+                                    <div class="p-technology-content-img">
+                                        {{ img | asset_img_url: '210x' | img_tag: img_tag }}
+                                    </div>
+                                    <div class="p-technology-content-head">{{ 'products.technology_articgrip.title' | t }}</div>
+                                    <div class="p-technology-content-text">{{ 'products.technology_articgrip.text' | t }}</div>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                </ul>
+            </div>
+     </div>
+{% endif %}
 
-    {% for tag in product.tags %}
-        {% if tag contains attribute_keyword %}
-        {%- comment -%}Loop techs tags{%- endcomment -%}
-            {% if tag == "Tech: XPAN" %}
-
-                {{ 'tech_xpan.png' | asset_img_url: '190x' | img_tag: "XPAN" }}
     
-                <p>XPAN</p>
-                <p>XPAN SOLE</p>
-                <p>Exclusive to ROYER in North America, XPAN is a dual-density rubber vulcanization technology. XPAN combines the durability of dense rubber with the comfort and shock absorption of expanded rubber. The result is a high-performance, durable sole that is also flexible and comfortable.</p>
-            {% endif %}
-            {% if tag == "Tech: Pareshok" %}
-                <p>Parashok</p>
-                <p>PARESHOK BUMPER TOE</p>
-                <p>Protective TPU or rubber toecap positioned on the front of the boot (over the leather and toecap) to increase the vamp’s resistance to wear.</p>
-            {% endif %}
 
-        {% endif %}
-    {% endfor %}
-</div>
+

@@ -1,9 +1,5 @@
 {% assign attribute_keyword = "Certif:" %}
 
-{% for tag in product.tags %}
-    {% assign tagslist = product.tags | join: ',' %}
-{% endfor %}
-
 {% assign tags_certif = '' | split: ',' %}
 
 {% for tag in product.tags %}
@@ -14,11 +10,9 @@
     {% endif %}
 {% endfor %}
 
-
 {% if tags_certif contains "Certif: csa_toe_poncture" %}
   Hey there, Shopify employee!
 {% endif %}
-
 
 {% if has_tags_certif == "yes" %}
     <div class="product-single__description rte">

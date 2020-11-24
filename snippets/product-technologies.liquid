@@ -15,7 +15,7 @@
                     {% if tag contains attribute_keyword %}
                         {% if tag == "Tech: XPAN" %}
                             {% capture img %}{{ 'products.technology_xpan.img' | t }}{% endcapture %}
-                            {% capture img_tag %}{{ 'products.technology_xpan.img' | t }}{% endcapture %}
+                            {% capture img_tag %}{{ 'products.technology_xpan.title' | t }}{% endcapture %}
                             <li>
                                 <div class="p-technology-content">
                                     <div class="p-technology-content-img">
@@ -28,7 +28,7 @@
                         {% endif %}
                         {% if tag == "Tech: Pareshok" %}
                             {% capture img %}{{ 'products.technology_pareshok.img' | t }}{% endcapture %}
-                            {% capture img_tag %}{{ 'products.technology_pareshok.img' | t }}{% endcapture %}
+                            {% capture img_tag %}{{ 'products.technology_pareshok.title' | t }}{% endcapture %}
                             <li>
                                 <div class="p-technology-content">
                                     <div class="p-technology-content-img">{{ img | asset_img_url: '210x' | img_tag: img_tag }}</div>
@@ -39,7 +39,7 @@
                         {% endif %}
                         {% if tag == "Tech: Airflow" %}
                             {% capture img %}{{ 'products.technology_airflow.img' | t }}{% endcapture %}
-                            {% capture img_tag %}{{ 'products.technology_airflow.img' | t }}{% endcapture %}
+                            {% capture img_tag %}{{ 'products.technology_airflow.title' | t }}{% endcapture %}
                             <li>
                                 <div class="p-technology-content">
                                     <div class="p-technology-content-img">
@@ -52,7 +52,7 @@
                         {% endif %}
                         {% if tag == "Tech: Shieldtex" %}
                             {% capture img %}{{ 'products.technology_shieldtex.img' | t }}{% endcapture %}
-                            {% capture img_tag %}{{ 'products.technology_shieldtex.img' | t }}{% endcapture %}
+                            {% capture img_tag %}{{ 'products.technology_shieldtex.title' | t }}{% endcapture %}
                             <li>
                                 <div class="p-technology-content">
                                     <div class="p-technology-content-img">
@@ -65,7 +65,7 @@
                         {% endif %}
                         {% if tag == "Tech: Artic Grip" %}
                             {% capture img %}{{ 'products.technology_articgrip.img' | t }}{% endcapture %}
-                            {% capture img_tag %}{{ 'products.technology_articgrip.img' | t }}{% endcapture %}
+                            {% capture img_tag %}{{ 'products.technology_articgrip.title' | t }}{% endcapture %}
                             <li>
                                 <div class="p-technology-content">
                                     <div class="p-technology-content-img">
@@ -73,6 +73,45 @@
                                     </div>
                                     <div class="p-technology-content-head">{{ 'products.technology_articgrip.title' | t }}</div>
                                     <div class="p-technology-content-text">{{ 'products.technology_articgrip.text' | t }}</div>
+                                </div>
+                            </li>
+                        {% endif %}
+                        {% if tag == "Tech: Realreflex" %}
+                            {% capture img %}{{ 'products.technology_realreflex.img' | t }}{% endcapture %}
+                            {% capture img_tag %}{{ 'products.technology_realreflex.title' | t }}{% endcapture %}
+                            <li>
+                                <div class="p-technology-content">
+                                    <div class="p-technology-content-img">
+                                        {{ img | asset_img_url: '210x' | img_tag: img_tag }}
+                                    </div>
+                                    <div class="p-technology-content-head">{{ 'products.technology_realreflex.title' | t }}</div>
+                                    <div class="p-technology-content-text">{{ 'products.technology_realreflex.text' | t }}</div>
+                                </div>
+                            </li>
+                        {% endif %}
+                        {% if tag == "Tech: Kevlar" %}
+                            {% capture img %}{{ 'products.technology_kevlar.img' | t }}{% endcapture %}
+                            {% capture img_tag %}{{ 'products.technology_kevlar.title' | t }}{% endcapture %}
+                            <li>
+                                <div class="p-technology-content">
+                                    <div class="p-technology-content-img">
+                                        {{ img | asset_img_url: '210x' | img_tag: img_tag }}
+                                    </div>
+                                    <div class="p-technology-content-head">{{ 'products.technology_kevlar.title' | t }}</div>
+                                    <div class="p-technology-content-text">{{ 'products.technology_kevlar.text' | t }}</div>
+                                </div>
+                            </li>
+                        {% endif %}
+                        {% if tag == "Tech: Thinsulate 200G" %}
+                            {% capture img %}{{ 'products.technology_thinsulate_200g.img' | t }}{% endcapture %}
+                            {% capture img_tag %}{{ 'products.technology_thinsulate_200g.title' | t }}{% endcapture %}
+                            <li>
+                                <div class="p-technology-content">
+                                    <div class="p-technology-content-img">
+                                        {{ img | asset_img_url: '210x' | img_tag: img_tag }}
+                                    </div>
+                                    <div class="p-technology-content-head">{{ 'products.technology_thinsulate_200g.title' | t }}</div>
+                                    <div class="p-technology-content-text">{{ 'products.technology_thinsulate_200g.text' | t }}</div>
                                 </div>
                             </li>
                         {% endif %}

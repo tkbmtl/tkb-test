@@ -9400,3 +9400,31 @@ h1 {
     font-weight: 300;
     padding: 10px 20px 0 20px;
 }
+
+.p-certifications {
+    display: table;
+    width: 100%;
+}
+
+.p-certification-content {
+    display: table-row;
+    text-align: left;
+    padding-top: 10px;
+}
+
+.p-certification-content-img {
+    display: table-cell;
+    padding-left: 10px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.p-certification-content-text {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 300;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

@@ -10,84 +10,112 @@
     {% endif %}
 {% endfor %}
 
-{% if tags_certif contains "Certif: csa_toe_poncture" %}
-  Hey there, Shopify employee!
-{% endif %}
-
 {% if has_tags_certif == "yes" %}
     <div class="product-single__description rte">
         <h1 class="p-description-h1">Certifications</h1>
             <div class="p-certifications">
-                <ul>
-                {% for tag in product.tags %}
-                    {%- comment -%}Loop techs tags{%- endcomment -%}
-                    {% if tag contains attribute_keyword %}
-                        {% if tag == "Tech: XPAN" %}
-                            {% capture img %}{{ 'products.technology_xpan.img' | t }}{% endcapture %}
-                            {% capture img_tag %}{{ 'products.technology_xpan.img' | t }}{% endcapture %}
-                            <li>
-                                <div class="p-technology-content">
-                                    <div class="p-technology-content-img">
-                                        {{ img | asset_img_url: '210x' | img_tag: img_tag }}
-                                    </div>
-                                    <div class="p-technology-content-head">{{ 'products.technology_xpan.title' | t }}</div>
-                                    <div class="p-technology-content-text">{{ 'products.technology_xpan.text' | t }}</div>
-                                </div>
-                            </li>
-                        {% endif %}
-                        {% if tag == "Tech: Pareshok" %}
-                            {% capture img %}{{ 'products.technology_pareshok.img' | t }}{% endcapture %}
-                            {% capture img_tag %}{{ 'products.technology_pareshok.img' | t }}{% endcapture %}
-                            <li>
-                                <div class="p-technology-content">
-                                    <div class="p-technology-content-img">{{ img | asset_img_url: '210x' | img_tag: img_tag }}</div>
-                                    <div class="p-technology-content-head">{{ 'products.technology_pareshok.title' | t }}</div>
-                                    <div class="p-technology-content-text">{{ 'products.technology_pareshok.text' | t }}</div>
-                                </div>
-                            </li>
-                        {% endif %}
-                        {% if tag == "Tech: Airflow" %}
-                            {% capture img %}{{ 'products.technology_airflow.img' | t }}{% endcapture %}
-                            {% capture img_tag %}{{ 'products.technology_airflow.img' | t }}{% endcapture %}
-                            <li>
-                                <div class="p-technology-content">
-                                    <div class="p-technology-content-img">
-                                        {{ img | asset_img_url: '210x' | img_tag: img_tag }}
-                                    </div>
-                                    <div class="p-technology-content-head">{{ 'products.technology_airflow.title' | t }}</div>
-                                    <div class="p-technology-content-text">{{ 'products.technology_airflow.text' | t }}</div>
-                                </div>
-                            </li>
-                        {% endif %}
-                        {% if tag == "Tech: Shieldtex" %}
-                            {% capture img %}{{ 'products.technology_shieldtex.img' | t }}{% endcapture %}
-                            {% capture img_tag %}{{ 'products.technology_shieldtex.img' | t }}{% endcapture %}
-                            <li>
-                                <div class="p-technology-content">
-                                    <div class="p-technology-content-img">
-                                        {{ img | asset_img_url: '210x' | img_tag: img_tag }}
-                                    </div>
-                                    <div class="p-technology-content-head">{{ 'products.technology_shieldtex.title' | t }}</div>
-                                    <div class="p-technology-content-text">{{ 'products.technology_shieldtex.text' | t }}</div>
-                                </div>
-                            </li>
-                        {% endif %}
-                        {% if tag == "Tech: Artic Grip" %}
-                            {% capture img %}{{ 'products.technology_articgrip.img' | t }}{% endcapture %}
-                            {% capture img_tag %}{{ 'products.technology_articgrip.img' | t }}{% endcapture %}
-                            <li>
-                                <div class="p-technology-content">
-                                    <div class="p-technology-content-img">
-                                        {{ img | asset_img_url: '210x' | img_tag: img_tag }}
-                                    </div>
-                                    <div class="p-technology-content-head">{{ 'products.technology_articgrip.title' | t }}</div>
-                                    <div class="p-technology-content-text">{{ 'products.technology_articgrip.text' | t }}</div>
-                                </div>
-                            </li>
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
-                </ul>
+                {%- comment -%} Need to show certification in order{%- endcomment -%}
+                {% if tags_certif contains "Certif: csa_toe_poncture" %}
+                    {% capture img %}{{ 'products.certification_csa_toe_poncture.img' | t }}{% endcapture %}
+                    {% capture img_tag %}{{ 'products.certification_csa_toe_poncture.text' | t }}{% endcapture %}
+                    <div class="p-certification-content">
+
+                        <div class="p-certification-content-img">
+                            {{ img | asset_img_url: '50x' | img_tag: img_tag }}
+                        </div>
+                        <div class="p-certification-content-text">
+                            {{ 'products.certification_csa_toe_poncture.text' | t }}
+                        </div>
+                     </div>
+
+                {% endif %}
+                {% if tags_certif contains "Certif: csa_elect" %}
+                    {% capture img %}{{ 'products.certification_csa_elect.img' | t }}{% endcapture %}
+                    {% capture img_tag %}{{ 'products.certification_csa_elect.text' | t }}{% endcapture %}
+                    <div class="p-certification-content">
+
+                        <div class="p-certification-content-img">
+                            {{ img | asset_img_url: '50x' | img_tag: img_tag }}
+                        </div>
+                        <div class="p-certification-content-text">
+                            {{ 'products.certification_csa_elect.text' | t }}
+                        </div>
+                     </div>
+                {% endif %}
+                {% if tags_certif contains "Certif: csa_mata" %}
+                    {% capture img %}{{ 'products.certification_csa_mata.img' | t }}{% endcapture %}
+                    {% capture img_tag %}{{ 'products.certification_csa_mata.text' | t }}{% endcapture %}
+                    <div class="p-certification-content">
+
+                        <div class="p-certification-content-img">
+                            {{ img | asset_img_url: '50x' | img_tag: img_tag }}
+                        </div>
+                        <div class="p-certification-content-text">
+                            {{ 'products.certification_csa_mata.text' | t }}
+                        </div>
+                     </div>
+                {% endif %}
+                {% if tags_certif contains "Certif: astm_i75" %}
+                    {% capture img %}{{ 'products.certification_astm_i_75.img' | t }}{% endcapture %}
+                    {% capture img_tag %}{{ 'products.certification_astm_i_75.text' | t }}{% endcapture %}
+                    <div class="p-certification-content">
+                        <div class="p-certification-content-img">
+                            {{ img | asset_img_url: '50x' | img_tag: img_tag }}
+                        </div>
+                        <div class="p-certification-content-text">
+                            {{ 'products.certification_astm_i_75.text' | t }}
+                        </div>
+                     </div>
+                {% endif %}
+                {% if tags_certif contains "Certif: astm_c75" %}
+                    {% capture img %}{{ 'products.certification_astm_c_75.img' | t }}{% endcapture %}
+                    {% capture img_tag %}{{ 'products.certification_astm_c_75.text' | t }}{% endcapture %}
+                    <div class="p-certification-content">
+                        <div class="p-certification-content-img">
+                            {{ img | asset_img_url: '50x' | img_tag: img_tag }}
+                        </div>
+                        <div class="p-certification-content-text">
+                            {{ 'products.certification_astm_c_75.text' | t }}
+                        </div>
+                     </div>
+                {% endif %}
+                {% if tags_certif contains "Certif: astm_pr" %}
+                    {% capture img %}{{ 'products.certification_astm_pr.img' | t }}{% endcapture %}
+                    {% capture img_tag %}{{ 'products.certification_astm_pr.text' | t }}{% endcapture %}
+                    <div class="p-certification-content">
+                        <div class="p-certification-content-img">
+                            {{ img | asset_img_url: '50x' | img_tag: img_tag }}
+                        </div>
+                        <div class="p-certification-content-text">
+                            {{ 'products.certification_astm_pr.text' | t }}
+                        </div>
+                     </div>
+                {% endif %}
+                {% if tags_certif contains "Certif: astm_mt_75" %}
+                    {% capture img %}{{ 'products.certification_astm_mt_75.img' | t }}{% endcapture %}
+                    {% capture img_tag %}{{ 'products.certification_astm_mt_75.text' | t }}{% endcapture %}
+                    <div class="p-certification-content">
+                        <div class="p-certification-content-img">
+                            {{ img | asset_img_url: '50x' | img_tag: img_tag }}
+                        </div>
+                        <div class="p-certification-content-text">
+                            {{ 'products.certification_astm_mt_75.text' | t }}
+                        </div>
+                     </div>
+                {% endif %}
+                {% if tags_certif contains "Certif: astm_eh" %}
+                    {% capture img %}{{ 'products.certification_astm_eh.img' | t }}{% endcapture %}
+                    {% capture img_tag %}{{ 'products.certification_astm_eh.text' | t }}{% endcapture %}
+                    <div class="p-certification-content">
+                        <div class="p-certification-content-img">
+                            {{ img | asset_img_url: '50x' | img_tag: img_tag }}
+                        </div>
+                        <div class="p-certification-content-text">
+                            {{ 'products.certification_astm_eh.text' | t }}
+                        </div>
+                     </div>
+                {% endif %}
+
             </div>
      </div>
 {% endif %}

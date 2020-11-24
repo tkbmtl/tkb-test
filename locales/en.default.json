@@ -397,6 +397,53 @@
       "title": "VIBRAM ARCTIC GRIP SOLE",
       "text": "This new groundbreaking sole technology is specifically designed for wet ice. Discover a whole new world of grip and performance on slippery and wet ice. ARCTIC GRIP is the most advanced cold weather gripping system that VIBRAM has ever created."
     },
+    "technology_realreflex": {
+      "img": "tech_realflex.png",
+      "title": "REALFLEX PROTECTOR",
+      "text": "External metatarsal protector exclusive to ROYER. It maintains the footwear's natural pliability when walking and when working in a squatting or kneeling position. It protects the metatarsal region of the foot from heavy falling objects and meets various international standards (ASTM, CSA, ISO/EN)."
+    },
+    "technology_kevlar": {
+      "img": "tech_kevlar.png",
+      "title": "REALFLEX PROTECTOR",
+      "text": "High-performance KEVLAR fibre thread is 2.5 times stronger than nylon or polyester. It is also more resistant to heat and flames and is used to make our specialty products for foundries, metallurgical industries and welding sites."
+    },
+    "technology_thinsulate_200g": {
+      "img": "tech_thinsulate_200g.png",
+      "title": "200G THINSULATE",
+      "text": "This product is insulated with 200 grams of THINSULATE."
+    },
+    "certification_csa_toe_poncture": {
+      "img": "certif_csa_toe_poncture.png",
+      "text": "CSA Z195-14 certified protective toecap and certified puncture-resistant sole."
+    },
+    "certification_csa_elect": {
+      "img": "certif_csa_elect.png",
+      "text": "CSA Z195-14 certified electric-shock protection (18 kV / 60 Hz / 1 minute)."
+    },
+    "certification_csa_mata": {
+      "img": "certif_csa_mata.png",
+      "text": "CSA Z195-14 certified metatarsal protection (101.7 joules)."
+    },
+    "certification_astm_i_75": {
+      "img": "certif_astm_i-75.png",
+      "text": "ASTM F2413-18 certified protective toecap (impact resistance of 75 ft-lbf)."
+    },
+    "certification_astm_c_75": {
+      "img": "certif_astm_c-75.png",
+      "text": "ASTM F2413-18 certified protective toecap (compression resistance of 2500 lbs)."
+    },
+    "certification_astm_pr": {
+      "img": "certif_astm_pr.png",
+      "text": "ASTM F2413-18 certified puncture-resistant sole (1 200 newtons)"
+    },
+    "certification_astm_mt_75": {
+      "img": "certif_astm_mt-75.png",
+      "text": "ASTM F2413-18 certified metatarsal protection (75 ft-lbf)."
+    },
+    "certification_astm_eh": {
+      "img": "certif_astm_eh.png",
+      "text": "ASTM F2413-18 certified metatarsal protection (75 ft-lbf)."
+    },
     "product": {
       "characteristics": "Characteristics",
       "regular_price": "Regular price",

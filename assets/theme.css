@@ -9314,7 +9314,7 @@ h1 {
             rgba(0, 0, 0, 0.65),
             rgba(0, 0, 0, 0.65)
         ),
-        url(https://cdn.shopify.com/s/files/1/0510/5627/9746/t/2/assets/Group-106.svg);
+        url(https://cdn.shopify.com/s/files/1/0510/5627/9746/t/3/assets/Group-106.png?v=1606328778);
     background-position: 0 0, 0 0;
     background-size: auto, cover;
 }
@@ -9336,6 +9336,9 @@ h1 {
     }
     .p-description-main {
         margin-top: 0px;
+    }
+    .product-recommendations__inner h1 {
+        font-size: 30px;
     }
 }
 
@@ -9359,15 +9362,12 @@ h1 {
 
 .p-description,
 .p-technologies,
-.p-certifications {
+.p-certifications:not(:last-child) {
     padding-bottom: 23px;
     border-bottom: 1px solid #c8102e;
     color: white;
 }
 
-.p-certifications {
-    margin-bottom: 50px;
-}
 .p-technologies ul {
     list-style-type: none;
     margin: 0;
@@ -9405,6 +9405,10 @@ h1 {
     padding: 10px 20px 0 20px;
 }
 
+.p-certifications {
+    margin-bottom: 40px;
+}
+
 .p-certification-content {
     display: flex;
     align-items: center;
@@ -9418,4 +9422,10 @@ h1 {
     font-size: 18px;
     font-weight: 300;
     padding: 20px;
+}
+
+/* Products listing */
+
+.product-card__title {
+    border-bottom: 0;
 }

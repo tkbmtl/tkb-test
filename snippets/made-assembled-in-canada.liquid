@@ -1,8 +1,8 @@
 <div class="product-cnd">
-    {% assign attribute_keyword = 'Canada' %}
     {% for tag in product.tags %}
-    {% if tag contains attribute_keyword %}
-        {{tag }}
-    {% endif %}
+        {% if tag contains 'Assembled in Canada'  %}
+            <img src="{{ 'assembled_in_canada.png' | asset_img_url: 'medium' }}" alt="">
+        {% endif %}
+
     {% endfor %}
 </div>

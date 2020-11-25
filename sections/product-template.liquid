@@ -136,6 +136,9 @@
 
         <div class="head-product-info-block padding-hr">
       
+          {%- comment -%} Check to see if Canadian {%- endcomment -%}
+          {% include 'made-assembled-in-canada' %}
+
           {%- comment -%}Show Vendor {%- endcomment -%}
           <h3 class="p-head-h3">{{ product.vendor }}</h3>
           {%- comment -%}Show SKU {%- endcomment -%}
@@ -432,18 +435,9 @@
 
       {% include 'product-certifications' %}
 
-
-              {%- comment -%} Check to see if Canadian {%- endcomment -%}
-              {% include 'made-assembled-in-canada' %}
-
-              
-
-              
-
-
-              {% if section.settings.show_share_buttons %}
+              {% comment %} {% if section.settings.show_share_buttons %}
                 {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_media %}
-              {% endif %}
+              {% endif %} {% endcomment %}
 
     </div>
 

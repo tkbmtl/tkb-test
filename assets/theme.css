@@ -9364,6 +9364,10 @@ h1 {
     border-bottom: 1px solid #c8102e;
     color: white;
 }
+
+.p-certifications {
+    margin-bottom: 50px;
+}
 .p-technologies ul {
     list-style-type: none;
     margin: 0;
@@ -9401,30 +9405,17 @@ h1 {
     padding: 10px 20px 0 20px;
 }
 
-.p-certifications {
-    display: table;
-    width: 100%;
-}
-
 .p-certification-content {
-    display: table-row;
-    text-align: left;
-    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
 }
 
 .p-certification-content-img {
-    display: table-cell;
-    padding-left: 10px;
-    vertical-align: middle;
-    text-align: center;
 }
 
 .p-certification-content-text {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: left;
     font-size: 18px;
     font-weight: 300;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 20px;
 }

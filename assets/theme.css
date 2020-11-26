@@ -9424,6 +9424,14 @@ h1 {
     padding: 20px;
 }
 
+.p-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-cnd {
+    text-align: left;
+}
 /* Products listing */
 
 .product-card__title {

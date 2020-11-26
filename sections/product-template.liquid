@@ -135,12 +135,13 @@
       <div class="product-single__meta">
 
         <div class="head-product-info-block padding-hr">
-      
-          {%- comment -%} Check to see if Canadian {%- endcomment -%}
-          {% include 'made-assembled-in-canada' %}
+          <div class="p-head">
+            {%- comment -%}Show Vendor {%- endcomment -%}
+            <h3 class="p-head-h3">{{ product.vendor }}</h3>
+            {%- comment -%} Check to see if Canadian {%- endcomment -%}
+            {% include 'made-assembled-in-canada' %}
+          </div>
 
-          {%- comment -%}Show Vendor {%- endcomment -%}
-          <h3 class="p-head-h3">{{ product.vendor }}</h3>
           {%- comment -%}Show SKU {%- endcomment -%}
           {% assign current_variant = product.selected_or_first_available_variant %}
           <h1 class="variant-sku">{{ current_variant.sku }}</h1>

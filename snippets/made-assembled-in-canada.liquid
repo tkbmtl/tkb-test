@@ -2,7 +2,8 @@
     {% for tag in product.tags %}
         {% if tag contains 'Assembled in Canada'  %}
             <img src="{{ 'assembled_in_canada.png' | asset_img_url: 'medium' }}" alt="">
+        {% elsif tag contains 'Made in Canada'  %}
+            <img src="{{ 'made_in_canada.png' | asset_img_url: 'medium' }}" alt="">
         {% endif %}
-
     {% endfor %}
 </div>

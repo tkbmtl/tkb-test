@@ -445,6 +445,10 @@
       "text": "ASTM F2413-18 certified metatarsal protection (75 ft-lbf)."
     },
     "product": {
+      "made_in_canada_text": "Made In Canada",
+      "made_in_canada_img": "made_in_canada.png",
+      "assembled_in_canada_text": "Assembled In Canada",
+      "assembled_in_canada_img": "assembled_in_canada.png",
       "characteristics": "Characteristics",
       "regular_price": "Regular price",
       "sold_out": "Sold out",

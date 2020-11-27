@@ -1,9 +1,11 @@
 <div class="product-cnd">
     {% for tag in product.tags %}
         {% if tag contains 'Assembled in Canada'  %}
-            <img src="{{ 'assembled_in_canada.png' | asset_img_url: 'medium' }}" alt="">
+            {% capture img %}{{ 'products.product.assembled_in_canada_img' | t }}{% endcapture %}
+            <img src="{{ img | asset_img_url: '175x' }}" alt="{{ 'products.product.assembled_in_canada_text' | t }}">
         {% elsif tag contains 'Made in Canada'  %}
-            <img src="{{ 'made_in_canada.png' | asset_img_url: 'medium' }}" alt="">
+            {% capture img %}{{ 'products.product.made_in_canada_img' | t }}{% endcapture %}
+            <img src="{{ img | asset_img_url: '175x' }}" alt="{{ 'products.product.made_in_canada_text' | t }}">
         {% endif %}
     {% endfor %}
 </div>

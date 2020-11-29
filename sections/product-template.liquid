@@ -196,6 +196,7 @@
                           {% endfor %}
                         
                         <script>
+                        (function(){
                           // First load for color label
                           var radios_color = document.getElementsByName('color');
                           for (var i = 0, length = radios_color.length; i < length; i++) {
@@ -218,6 +219,7 @@
                               });
                             }
                           }
+                        })();
                         </script>
 
                       </div>
@@ -240,7 +242,7 @@
                           {% endfor %}
 
                         <script>
-
+                        (function(){
                           window.addEventListener("DOMContentLoaded", firstloadSize, false);
                           
                           function firstloadSize(e) {
@@ -296,6 +298,7 @@
                               });
                             }
                           }
+                          })();
                         </script>
 
                         

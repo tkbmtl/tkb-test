@@ -471,6 +471,93 @@
 {% endunless %}
 
 
+
+
+
+
+
+
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+  const productJson = [...document.querySelectorAll('[id^=ProductJson-')];
+  if (productJson.length > 0) {
+    productJson.forEach((product) => { 
+      const sectionId = product.id.replace("ProductJson-", "shopify-section-");
+      const productVariants = JSON.parse(product.innerHTML);
+      const unavailableVariants = [];
+      productVariants.variants.forEach((variant) => {
+        if (variant.available === false) {
+          unavailableVariants.push(variant);
+        }
+      });
+      console.log(unavailableVariants);
+      const variantOptions = [...document.querySelectorAll('#' + sectionId + ' .single-option-selector option')]
+      const observer = new MutationObserver((mutation) => {
+        unavailableVariants.forEach((item) => {
+          variantOptions.forEach((option) => {
+            if (option.value === item.title) option.setAttribute('disabled', '');
+          });
+        });
+        observer.disconnect();
+      });
+      if (unavailableVariants.length > 0 && productVariants.options.length === 1) {
+        const addToCartForm = document.querySelector('form[ action="/cart/add"]');
+        if (window.MutationObserver && addToCartForm.length) {
+          if (typeof observer === 'object' && typeof observer.disconnect === 'function') {
+            observer.disconnect();
+          }
+          const config = { childList: true, subtree: true };
+          observer.observe(addToCartForm, config);
+        }
+      }
+    });
+  }
+});
+</script>
+
+
+
+
+
+
+<script>
+//document.addEventListener('DOMContentLoaded', () => {
+      var arrUnAvailableVairants = [];
+
+      {% for variant in product.variants %} 
+        {% unless variant.available %}
+          arrUnAvailableVairants.push('{{ variant.title }}');
+        {% endunless %} 
+      {% endfor %}
+
+      if(arrUnAvailableVairants.length != 0) {
+        console.log('Unavaible: ' + arrUnAvailableVairants);
+        var selected_color = document.getElementById("selected-color").textContent;
+        console.log('Color: ' + selected_color)
+
+        if (arrUnAvailableVairants.some( e => e.includes(selected_color))) {
+          console.log('OUI')
+          //La couleur selectionné contient une variante (donc un size) 
+          //qui n'a plus de stock, il faut donc griser la boite
+          //On va louper les sizes et ajouter une classe
+          let allSizes = document.querySelectorAll('input[name="size"]')
+          for( let i = 0; i < allSizes.length; i++ ){
+            allSizes[i].classList.add("out-of-stock-size");
+            //allSizes[i].disabled = true
+          }
+        }
+        
+      }
+
+//});                          
+</script>
+
+
+
+
+
+
 {% schema %}
 {
   "name": {

@@ -9304,13 +9304,14 @@ h1 {
     color: white;
 }
 
-.size-boxes input:hover:not(:checked) + label {
+.size-boxes input:hover:not(:checked):not(.out-of-stock-size) + label {
     background-color: lightgray;
     opacity: 0.8;
 }
-
+ 
 .out-of-stock-size + label {
-    background-color: red;
+    background-color: lightgray;
+    opacity: 0.2;
     cursor: default;
 }
 

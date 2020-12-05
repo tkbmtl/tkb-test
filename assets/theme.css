@@ -9456,8 +9456,18 @@ h1 {
     border: 0;
 }
 
-/* Products listing */
+/* Products grid */
 
 .product-card__title {
     border-bottom: 0;
+}
+
+/* Individual grid */
+
+.grid-view-item {
+    margin: 0 auto 5px;
+}
+
+.hr-in-grid {
+    margin: 0;
 }

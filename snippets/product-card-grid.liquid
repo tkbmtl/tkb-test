@@ -47,3 +47,15 @@
   {% include 'product-price-listing', product: product, show_vendor: show_vendor %}
 
 </div>
+
+{% comment %} Show color swatch {% endcomment %}
+{%- for option in product.options -%}
+  {%- if option == 'Color' -%}
+    <div>
+      <hr class="hr-in-grid">
+      {% for color_option in product.options_by_name['Color'].values %}
+        <span>{{ color_option }}</span>
+    {% endfor %}
+  </div>
+  {%- endif -%}
+{%- endfor -%}

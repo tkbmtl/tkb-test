@@ -9469,5 +9469,21 @@ h1 {
 }
 
 .hr-in-grid {
-    margin: 0;
+    margin: 0 0 7px 0;
+}
+
+.swatch-small {
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    padding: 5px;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1pt #bebebe;
+    /* float: left; */
+    display: inline-block;
+    margin: 0 8px 5px 0;
+}
+
+.text-cap {
+    text-transform: uppercase;
 }

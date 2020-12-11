@@ -9255,8 +9255,12 @@ h1 {
 .swatch-color-Sand {
     background-color: #e1b288;
 }
+
 .swatch-color-Burgundy {
     background-color: #522023;
+}
+.swatch-color-Arizona {
+    background-color: #7E4444;
 }
 
 .padding-hr {
@@ -9487,3 +9491,5 @@ h1 {
 .text-cap {
     text-transform: uppercase;
 }
+
+/* MENU */

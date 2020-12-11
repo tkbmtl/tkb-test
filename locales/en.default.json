@@ -412,6 +412,11 @@
       "title": "200G THINSULATE",
       "text": "This product is insulated with 200 grams of THINSULATE."
     },
+    "technology_rovak": {
+      "img": "tech_rovak.png",
+      "title": "ROVAK",
+      "text": ""
+    },
     "certification_csa_toe_poncture": {
       "img": "certif_csa_toe_poncture.png",
       "text": "CSA Z195-14 certified protective toecap and certified puncture-resistant sole."

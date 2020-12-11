@@ -115,6 +115,19 @@
                                 </div>
                             </li>
                         {% endif %}
+                        {% if tag == "Tech: Rovak" %}
+                            {% capture img %}{{ 'products.technology_rovak.img' | t }}{% endcapture %}
+                            {% capture img_tag %}{{ 'products.technology_rovak.title' | t }}{% endcapture %}
+                            <li>
+                                <div class="p-technology-content">
+                                    <div class="p-technology-content-img">
+                                        {{ img | asset_img_url: '210x' | img_tag: img_tag }}
+                                    </div>
+                                    <div class="p-technology-content-head">{{ 'products.technology_rovak.title' | t }}</div>
+                                    <div class="p-technology-content-text">{{ 'products.technology_rovak.text' | t }}</div>
+                                </div>
+                            </li>
+                        {% endif %}
                     {% endif %}
                 {% endfor %}
                 </ul>

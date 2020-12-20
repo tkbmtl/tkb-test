@@ -8941,12 +8941,10 @@ hr {
     font-size: var(--font-size-base);
     margin-bottom: 8px;
 }
-
 .store-availability-list__stock {
     margin-top: 8px;
     margin-bottom: 16px;
 }
-
 .store-availability-list__phone {
     margin-bottom: 0;
 }

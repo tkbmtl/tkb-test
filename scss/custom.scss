@@ -1,0 +1,87 @@
+/*****************************************************************/
+/* CUSTOM */
+/*****************************************************************/
+
+@import "productPage";
+
+/* FONT */
+
+h1,
+h2,
+h3,
+h4 {
+    text-transform: uppercase !important;
+}
+
+/* Top Message */
+
+.announcement-bar__message {
+    padding: 5px 22px;
+    font-size: calc(((12) / (var(--font-size-base))) * 1em);
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+/**** Main Menu ************************/
+
+#SiteNav {
+    font-family: prompt;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.site-nav--has-dropdown .site-nav__label {
+    text-transform: uppercase;
+}
+
+.site-nav__label {
+    border-bottom: none;
+}
+
+/* Hero front page */
+.hero__btn {
+    background-color: #c8102e;
+    font-size: 28px;
+    padding: 7px 30px;
+}
+
+a.hero__btn:hover {
+    background-color: #b30d28 !important;
+}
+
+.hero .mega-title {
+    text-transform: uppercase;
+}
+
+/* Products grid */
+.product-card__title {
+    border-bottom: 0;
+}
+
+/* Individual grid */
+
+.grid-view-item {
+    margin: 0 auto 5px;
+}
+
+.hr-in-grid {
+    margin: 0 0 7px 0;
+}
+
+.swatch-small {
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    padding: 5px;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1pt #bebebe;
+    /* float: left; */
+    display: inline-block;
+    margin: 0 8px 5px 0;
+}
+
+.text-cap {
+    text-transform: uppercase;
+}
+
+/* MENU */

@@ -217,9 +217,9 @@
         "settings": {
           "layout": "grid",
           "grid": 4,
-          "rows": 2,
+          "rows": 4,
           "show_collection_image": true,
-          "show_vendor": false,
+          "show_vendor": true,
           "sort_enable": true,
           "tags_enable": true
         }
@@ -241,7 +241,7 @@
         "settings": {
           "show_product_recommendations": true,
           "heading": "You may also like",
-          "show_vendor": false
+          "show_vendor": true
         }
       }
     },

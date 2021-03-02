@@ -70,14 +70,14 @@
         </div>
       </div>
     {% endif %}
-
     {% if is_filter_by_available or section.settings.sort_enable %}
       <div class="filters-toolbar-wrapper{% if is_filter_by_available %} filters-toolbar--has-filter{% endif %}">
         <div class="page-width">
           <div class="filters-toolbar">
             <div class="filters-toolbar__item-wrapper">
-              {% if section.settings.tags_enable %}
+              {% comment %} {% if section.settings.tags_enable %}
                 {% unless collection.all_tags.size == 0 %}
+                
                   <div class="filters-toolbar__item-child">
                     <label class="filters-toolbar__label select-label" for="FilterTags">{{ 'collections.filters.title_tags' | t }}</label>
                     <div class="filters-toolbar__input-wrapper select-group">
@@ -92,7 +92,7 @@
                     </div>
                   </div>
                 {% endunless %}
-              {% endif %}
+              {% endif %} {% endcomment %}
 
 
 
@@ -128,7 +128,29 @@
     {% endif %}
   </header>
 
+{% comment %} CUSTOM TAGS FILTER {% endcomment %}
+  <div class="filters">
+    {% if section.settings.tags_enable %}
+      {% unless collection.all_tags.size == 0 %}
+      <div class="filter-title">{{ 'collections.filters.title_tags' | t }}</div>
+      <div class="all-product"><a href="{{ collection.url }}">{{ 'collections.filters.all_tags' | t }}</a></div>
+     {% comment %} TODO: ALSO ADD BRAND AS A FILTER {% endcomment %}
+      <div class="tags-list">
+        {% for tag in collection.all_tags %}
+              {%- assign new_url = tag | link_to_tag: tag | split: 'href="' | last | split: '"' | first -%}
+              <div class="tag {% if current_tags contains tag %} selected="selected"{% endif %}">
+              <a href="{{ new_url }}">{{ tag }}</a>
+              </div>
+            {% endfor %}
+      </div>
+      {% endunless %}
+    {% endif %}
+  </div>
+{% comment %} END CUSTOM TAGS FILTER {% endcomment %}
+
+
   <div class="page-width" id="Collection">
+
     {% if section.settings.layout == 'grid' %}
       {% case section.settings.grid %}
       {% when 2 %}
